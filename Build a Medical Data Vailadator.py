@@ -35,6 +35,10 @@ step 5
 # Step 11
 # After the if statement, print the string Valid format.. Then return True.
 
+# Step 12
+# At the bottom of your code, call the validate function with medical_records as the argument.
+# You should see Valid format. printed to the terminal.
+
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -85,3 +89,4 @@ def validate(data):
         return False
         print("Valid format.")
     return True
+validate(medical_records)
