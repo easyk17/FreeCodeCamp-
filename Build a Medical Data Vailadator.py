@@ -1,3 +1,6 @@
+from struct import unpack
+
+
 step 5
 # Following the same structure you used in the previous steps, 
 # the medical_records list has been filled up for you with other patients' data. 
@@ -286,7 +289,9 @@ Step 39
 # The find_invalid_records function is complete. Now, remove print(find_invalid_records(**medical_records[0])) from your code.
 
 # --------------------------------------------------------------------------------------------------------------------
-
+# Step 42
+# Going back to the validate function, after the two if statements and still inside the for loop, create a variable named invalid_records.
+# Then, assign it a call to find_invalid_records using the ** operator to unpack dictionary.
 
 # --------------------------------------------------------------------------------------------------------------------
 
@@ -353,6 +358,7 @@ def validate(data):
         if set(dictionary.keys()) != key_set:
             print(f"Invalid format: {dictionary} at position {index} has missing and/or invalid keys.")
             is_invalid = True
+        invalid_records = find_invalid_records(**dictionary)
 
     if is_invalid:
         return False
