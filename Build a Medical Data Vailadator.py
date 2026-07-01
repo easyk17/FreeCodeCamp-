@@ -32,6 +32,9 @@ step 5
 # After your for loop, still inside the validate function, create an if statement. 
 # If is_invalid is True, return False.
 
+# Step 11
+# After the if statement, print the string Valid format.. Then return True.
+
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -80,4 +83,5 @@ def validate(data):
 
     if is_invalid:
         return False
+        print("Valid format.")
     return True
