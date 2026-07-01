@@ -228,9 +228,11 @@ step 5
 # Step 33
 # Now add a key diagnosis to the constraints dictionary. 
 # For its value, write an expression that checks that diagnosis is either an instance of str or is None.
---------------------------------------------------------------------------------------------------------------------
-
-
+# --------------------------------------------------------------------------------------------------------------------
+# Step 34
+# Next, add a medications key to the constraints dictionary. 
+# For its value use isinstance to check that medications is a list.
+# --------------------------------------------------------------------------------------------------------------------
 
 import re
 medical_records = [
@@ -274,7 +276,7 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
         'age': isinstance(age, int) and age >= 18,
         'gender: isinstance(gender, str) and gender.lower() in ('male', 'female'),
         'diagnosis': isinstance(diagnosis, str) or diagnosis is None,
-
+        'medications': isinstance(medications, list),
     }
     return constraints
 
