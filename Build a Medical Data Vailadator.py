@@ -118,6 +118,20 @@ step 5
 # For that, you are going to use a regular expression. 
 # Therefore, at the top of your code, use the import keyword to import the re module.
 
+# Step 25
+# A regular expression, or regex, is a pattern used to match a sequence of characters in text. 
+# The search function from the re module takes a regex pattern and a string as its arguments.
+
+# It returns a corresponding match object if the pattern produces a match. Otherwise it returns None.
+
+# Example Code
+# import re
+
+# greeting = "Hello there!"
+# print(re.search('Hi', greeting)) # None
+# print(re.search('Hello', greeting)) # <re.Match object; span=(0, 5), match='Hello'>
+# Call re.search with the string p as the first argument and patient_id as the second argument. Use the and operator to add the function call as a second expression to the value of your patient_id key.
+
 import re
 medical_records = [
     {
@@ -156,7 +170,7 @@ medical_records = [
 ]
 def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_visit_id):
     constraints = {
-        'patient_id': isinstance(patient_id, str),
+        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id),
         'age': isinstance(age, int) and 0 <= age <= 120,
         'gender
 
@@ -175,9 +189,11 @@ def validate(data):
         if not isinstance(dictionary, dict):
             print(f"Invalid format: expected a dictionary at position {index}.")
             is_invalid = True
+
         if set(dictionary.keys()) != key_set:
             print(f"Invalid format: {dictionary} at position {index} has missing and/or invalid keys.")
             is_invalid = True
+
     if is_invalid:
         return False
     print("Valid format.")
