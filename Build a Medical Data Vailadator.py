@@ -312,7 +312,7 @@ Step 39
 # --------------------------------------------------------------------------------------------------------------------
 
 import re
-medical_records = """[
+medical_records = [
     {
         'patient_id': 'P1001',
         'age': 34,
@@ -344,7 +344,7 @@ medical_records = """[
         'diagnosis': 'Chronic Back Pain',
         'medications': ['Ibuprofen', 'Physical Therapy'],
         'last_visit_id': 'V2304',
-    }"""
+    }
     
 ]
 def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_visit_id):
