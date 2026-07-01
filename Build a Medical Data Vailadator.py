@@ -6,21 +6,24 @@ step 5
 # You want to ensure that your data is either a list or a tuple. 
 # Therefore, within the validate function, declare a variable named is_sequence and assign it a call to isinstance. 
 # Pass in data as the first argument and a tuple containing list and tuple as the second argument.
-
+# --------------------------------------------------------------------------------------------------------------------
 #Step 6
 #Create an if statement. For its condition, use the not operator to negate is_sequence. 
 # Within the if statement, print Invalid format: expected a list or tuple. and return False.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 7
 # Right after your if statement, declare a variable named is_invalid and set it to False. 
 # Later on, you'll use it as a flag to run a conditional statement.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 8
 # Create a for loop that iterates over data. 
 # Use the enumerate function to get both the index and the item in data at each iteration. 
 # Use index and dictionary as iteration variables.
 # For now use pass to fill the loop body.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 9
 # You are checking if the data passed to your function is a list or a tuple. 
 # You still need to ensure that each item in the sequence is a dictionary.
@@ -28,32 +31,40 @@ step 5
 # print Invalid format: expected a dictionary at position <index>. 
 # (where <index> should be replaced by the current index) and set is_invalid to True.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 10
 # After your for loop, still inside the validate function, create an if statement. 
 # If is_invalid is True, return False.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 11
 # After the if statement, print the string Valid format.. Then return True.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 12
 # At the bottom of your code, call the validate function with medical_records as the argument.
 # You should see Valid format. printed to the terminal.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 13
 # To test the first if statement of your function, turn medical_records into a string. 
 # You should see Invalid format: expected a list or tuple. printed to the terminal. 
 # (in freecodecamp they used """ .....""" to turn it into a string, but you can also use single or double quotes). AI showed str () function to turn it into a string.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 14
 # Now turn medical_records back to a list/tuple of dictionaries.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 15
 # To test the second conditional statement, add two items of your choice that are not dictionaries at the end of the medical_records list. 
 # You should see two validation messages printed to the terminal.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 16
 # Now that you tested the validation for this part, remove the last two items from the medical_records list.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 17
 # As you learned in a previous lesson, a set is an unordered collection of unique elements:
 # Example Code
@@ -63,6 +74,7 @@ step 5
 # Inside the validate function, use the set() constructor to create a set from the following list of keys that each dictionary should have: 
 # ['patient_id', 'age', 'gender', 'diagnosis', 'medications', 'last_visit_id']. Assign the set to a variable named key_set.
 
+# --------------------------------------------------------------------------------------------------------------------
 # (Step 18
 # The keys() method returns a view object containing all the keys from doctest import Example from a dictionary:
 
@@ -77,13 +89,16 @@ step 5
 # Within the new if statement, print Invalid format: <dictionary> at position <index> has missing and/or invalid keys. 
 # (where <dictionary> and <index> should be replaced by the dictionary and index at the current iteration) and set is_invalid to True.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 19
 # To test that everything is working correctly, try to comment out the age key from the first dictionary in medical_records.
 # You should see a validation message appear in the terminal.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 20
 # Now restore the line 'age': 34,.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 21
 # Now you are going to make the validation more granular. 
 # Create a function named find_invalid_records to find invalid values in a dictionary. 
@@ -91,6 +106,7 @@ step 5
 # Inside your new function, create an empty dictionary named constraints. 
 # Then, return constraints from your new function.
 
+# --------------------------------------------------------------------------------------------------------------------
 # # Step 22
 # The ** operator can be used to unpack the elements in a dictionary and 
 # pass them as keyword arguments in a function call:
@@ -105,6 +121,7 @@ step 5
 # At the bottom of your code, print the result of calling the find_invalid_records function. 
 # For its arguments, use the ** operator to unpack medical_records[0].
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 23
 # The constraints dictionary will contain each key you should expect to have in the data to validate.
 # The value associated to each of them will indicate the result of the validation.
@@ -112,12 +129,14 @@ step 5
 # Add the key patient_id to the constraints dictionary. 
 # For its value, use a call to isinstance passing in patient_id and str as the arguments.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 24
 # As you wrote in the previous step, patient_id should be a string. 
 # You want to check that it also has a specific pattern though.
 # For that, you are going to use a regular expression. 
 # Therefore, at the top of your code, use the import keyword to import the re module.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 25
 # A regular expression, or regex, is a pattern used to match a sequence of characters in text. 
 # The search function from the re module takes a regex pattern and a string as its arguments.
@@ -132,6 +151,7 @@ step 5
 # print(re.search('Hello', greeting)) # <re.Match object; span=(0, 5), match='Hello'>
 # Call re.search with the string p as the first argument and patient_id as the second argument. Use the and operator to add the function call as a second expression to the value of your patient_id key.
 
+# --------------------------------------------------------------------------------------------------------------------
 # Step 26
 # Now you can see {'patient_id': None} printed to the terminal because the lowercase p does not match P1001 and the and operator returns the first falsy value of the expression.
 
@@ -149,6 +169,7 @@ step 5
 
 # After that, you'll see None replaced by the match object <re.Match object; span=(0, 1), match='P'>, where match indicates the match and span indicates its location in the string.
 
+# --------------------------------------------------------------------------------------------------------------------
 # # Step 27
 # Regular expressions can contain special sequences consisting in a backslash (\) followed by a character. These sequences have a special meaning. For example, \d matches a decimal digit.
 
@@ -159,6 +180,24 @@ step 5
 # print(re.search('\d', book))
 # # <re.Match object; span=(11, 12), match='4'>
 # After the letter p, patient_id should have a series of numbers. So, modify your regex pattern to have the character p followed by the special sequence \d.
+
+# --------------------------------------------------------------------------------------------------------------------
+# # Step 28
+# Quantifiers are used in regular expressions to specify how many times a character can be repeated. For example, the + character matches the previous character one or more times:
+
+# Example Code
+# import re
+
+# book = "Fahrenheit 451"
+# print(re.search('\d', book))
+# # <re.Match object; span=(11, 12), match='4'>
+
+# print(re.search('\d+', book))
+# # <re.Match object; span=(11, 14), match='451'>
+# So append a + quantifier to your regex pattern to match one or more digits.
+
+# --------------------------------------------------------------------------------------------------------------------
+
 
 import re
 medical_records = [
@@ -198,7 +237,7 @@ medical_records = [
 ]
 def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_visit_id):
     constraints = {
-        'patient_id': isinstance(patient_id, str) and re.search('p\d', patient_id, re.IGNORECASE),
+        'patient_id': isinstance(patient_id, str) and re.search('p\d+', patient_id, re.IGNORECASE),
         'age': isinstance(age, int) and 0 <= age <= 120,
         'gender
 
