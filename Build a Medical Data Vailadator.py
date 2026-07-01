@@ -219,7 +219,18 @@ step 5
 # Step 31
 # age should not only be a integer, it should be a positive integer greater than or equal to 18.
 # Using the and operator, add a second expression to the value of the age key to check that.
+--------------------------------------------------------------------------------------------------------------------
+# Step 32
+# Add another key gender to the constraints dictionary. 
+# Following the format of the expression you wrote in the previous steps, verify that gender is a string. 
+# Then, use the and operator to check that the lowercase gender is in ('male', 'female').
 # --------------------------------------------------------------------------------------------------------------------
+# Step 33
+# Now add a key diagnosis to the constraints dictionary. 
+# For its value, write an expression that checks that diagnosis is either an instance of str or is None.
+--------------------------------------------------------------------------------------------------------------------
+
+
 
 import re
 medical_records = [
@@ -261,7 +272,8 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
     constraints = {
         'patient_id': isinstance(patient_id, str) and re.fullmatch('p\d+', patient_id, re.IGNORECASE),
         'age': isinstance(age, int) and age >= 18,
-        'gender: isinstance(gender, str) and gender.lower() in ('male', 'female') 
+        'gender: isinstance(gender, str) and gender.lower() in ('male', 'female'),
+        'diagnosis': isinstance(diagnosis, str) or diagnosis is None,
 
     }
     return constraints
