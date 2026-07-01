@@ -259,7 +259,8 @@ step 5
 
 
 # --------------------------------------------------------------------------------------------------------------------
-
+# Step 37
+# Add one last key last_visit_id to the constraints dictionary. For its value, use isinstance to verify that last_visit_id is a string.
 
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -307,6 +308,7 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
         'gender: isinstance(gender, str) and gender.lower() in ('male', 'female'),
         'diagnosis': isinstance(diagnosis, str) or diagnosis is None,
         'medications': isinstance(medications, list) and all([isinstance(i, str) for i in medications]),
+        'last_visit_id': isinstance(last_visit_id, str)
     }
     return constraints
 
