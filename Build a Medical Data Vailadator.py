@@ -11,6 +11,10 @@
 #Create an if statement. For its condition, use the not operator to negate is_sequence. 
 # Within the if statement, print Invalid format: expected a list or tuple. and return False.
 
+# Step 7
+# Right after your if statement, declare a variable named is_invalid and set it to False. 
+# Later on, you'll use it as a flag to run a conditional statement.
+
 
 medical_records = [
     {
@@ -52,3 +56,5 @@ def validate(data):
     if not is_sequence:
         print("Invalid format: expected a list or tuple.")
         return False
+    is_invalid = False
+
