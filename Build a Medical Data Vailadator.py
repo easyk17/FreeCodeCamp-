@@ -84,10 +84,10 @@ medical_records = [
         'medications': ['Ibuprofen', 'Physical Therapy'],
         'last_visit_id': 'V2304',
     },
-    {
-        'patient_id': 'P1005',
-        'age': 42,
-    }
+    
+    "Bhai ye dictionary nahi hai",  # Item 1: String
+    100                             # Item 2: Number
+    
 ]
 
 def validate(data):
