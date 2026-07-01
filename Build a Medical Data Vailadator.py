@@ -1,4 +1,4 @@
-# step 5
+step 5
 # Following the same structure you used in the previous steps, 
 # the medical_records list has been filled up for you with other patients' data. 
 # Feel free to take a look at it. Next you'll start to write the function to validate the data set. 
@@ -27,6 +27,10 @@
 # Inside your for loop, if the item in dictionary is not an instance of dict, 
 # print Invalid format: expected a dictionary at position <index>. 
 # (where <index> should be replaced by the current index) and set is_invalid to True.
+
+# Step 10
+# After your for loop, still inside the validate function, create an if statement. 
+# If is_invalid is True, return False.
 
 medical_records = [
     {
@@ -73,3 +77,7 @@ def validate(data):
         if not isinstance(dictionary, dict):
             print(f"Invalid format: expected a dictionary at position {index}.")
             is_invalid = True
+
+    if is_invalid:
+        return False
+    return True
