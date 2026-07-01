@@ -84,6 +84,12 @@ step 5
 # Step 20
 # Now restore the line 'age': 34,.
 
+# Step 21
+# Now you are going to make the validation more granular. 
+# Create a function named find_invalid_records to find invalid values in a dictionary. 
+# Give it the following parameters: patient_id, age, gender, diagnosis, medications, last_visit_id.
+# Inside your new function, create an empty dictionary named constraints. 
+# Then, return constraints from your new function.
 
 medical_records = [
     {
@@ -120,6 +126,9 @@ medical_records = [
     }
     
 ]
+def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_visit_id):
+    constraints = {}
+    return constraints
 
 def validate(data):
     is_sequence = isinstance(data, (list, tuple))
