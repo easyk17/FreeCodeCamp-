@@ -41,10 +41,15 @@ step 5
 
 # Step 13
 # To test the first if statement of your function, turn medical_records into a string. 
-# You should see Invalid format: expected a list or tuple. printed to the terminal.
+# You should see Invalid format: expected a list or tuple. printed to the terminal. 
+# (in freecodecamp they used """ .....""" to turn it into a string, but you can also use single or double quotes). AI showed str () function to turn it into a string.
 
 # Step 14
 # Now turn medical_records back to a list/tuple of dictionaries.
+
+# Step 15
+# To test the second conditional statement, add two items of your choice that are not dictionaries at the end of the medical_records list. 
+# You should see two validation messages printed to the terminal.
 
 medical_records = [
     {
@@ -78,6 +83,10 @@ medical_records = [
         'diagnosis': 'Chronic Back Pain',
         'medications': ['Ibuprofen', 'Physical Therapy'],
         'last_visit_id': 'V2304',
+    },
+    {
+        'patient_id': 'P1005',
+        'age': 42,
     }
 ]
 
