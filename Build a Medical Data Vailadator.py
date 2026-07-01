@@ -54,6 +54,15 @@ step 5
 # Step 16
 # Now that you tested the validation for this part, remove the last two items from the medical_records list.
 
+# Step 17
+# As you learned in a previous lesson, a set is an unordered collection of unique elements:
+# Example Code
+# integers = set([3, 5, 1, 2, 1, 3, 4])
+# print(integers) # {1, 2, 3, 4, 5}
+# You're going to use a set to ensure that each dictionary does not contain extra or misspelled keys.
+# Inside the validate function, use the set() constructor to create a set from the following list of keys that each dictionary should have: 
+# ['patient_id', 'age', 'gender', 'diagnosis', 'medications', 'last_visit_id']. Assign the set to a variable named key_set.
+
 
 
 medical_records = [
@@ -98,6 +107,8 @@ def validate(data):
         print("Invalid format: expected a list or tuple.")
         return False
     is_invalid = False
+    key_set = set(['patient_id', 'age', 'gender', 'diagnosis', 'medications', 'last_visit_id'])
+    
     for index, dictionary in enumerate(data):
         if not isinstance(dictionary, dict):
             print(f"Invalid format: expected a dictionary at position {index}.")
