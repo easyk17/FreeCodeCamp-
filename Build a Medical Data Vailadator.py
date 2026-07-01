@@ -148,6 +148,18 @@ step 5
 # Add re.IGNORECASE as the third argument to your re.search call. This will make your regex search case insensitive.
 
 # After that, you'll see None replaced by the match object <re.Match object; span=(0, 1), match='P'>, where match indicates the match and span indicates its location in the string.
+
+# # Step 27
+# Regular expressions can contain special sequences consisting in a backslash (\) followed by a character. These sequences have a special meaning. For example, \d matches a decimal digit.
+
+# Example Code
+# import re
+
+# book = "Fahrenheit 451"
+# print(re.search('\d', book))
+# # <re.Match object; span=(11, 12), match='4'>
+# After the letter p, patient_id should have a series of numbers. So, modify your regex pattern to have the character p followed by the special sequence \d.
+
 import re
 medical_records = [
     {
@@ -186,7 +198,7 @@ medical_records = [
 ]
 def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_visit_id):
     constraints = {
-        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id, re.IGNORECASE),
+        'patient_id': isinstance(patient_id, str) and re.search('p\d', patient_id, re.IGNORECASE),
         'age': isinstance(age, int) and 0 <= age <= 120,
         'gender
 
