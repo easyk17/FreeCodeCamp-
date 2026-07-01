@@ -233,6 +233,27 @@ step 5
 # Next, add a medications key to the constraints dictionary. 
 # For its value use isinstance to check that medications is a list.
 # --------------------------------------------------------------------------------------------------------------------
+# Step 35
+# As you learned in a previous lesson, a list comprehension can be used to create a list starting from an existing iterable:
+
+# Example Code
+# squares = [0, 1, 4, 9, 16, 25]
+
+# roots = [i ** 0.5 for i in squares]
+# print(roots) # [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
+# Each item in the medications list should be a string. In this step and the next one you'll write an expression to check that. 
+# Use the and operator to add another expression to the value of the medications key.
+# On the right side of the and operator, use the list comprehension syntax to create a list made by evaluating isinstance(i, str) for each i in medications.
+
+# --------------------------------------------------------------------------------------------------------------------
+
+
+
+# --------------------------------------------------------------------------------------------------------------------
+
+
+
+# --------------------------------------------------------------------------------------------------------------------
 
 import re
 medical_records = [
@@ -276,7 +297,7 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
         'age': isinstance(age, int) and age >= 18,
         'gender: isinstance(gender, str) and gender.lower() in ('male', 'female'),
         'diagnosis': isinstance(diagnosis, str) or diagnosis is None,
-        'medications': isinstance(medications, list),
+        'medications': isinstance(medications, list) and [isinstance(i, str) for i in medications],
     }
     return constraints
 
