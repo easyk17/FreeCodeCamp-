@@ -39,6 +39,11 @@ step 5
 # At the bottom of your code, call the validate function with medical_records as the argument.
 # You should see Valid format. printed to the terminal.
 
+# Step 13
+# To test the first if statement of your function, turn medical_records into a string. 
+# You should see Invalid format: expected a list or tuple. printed to the terminal.
+
+
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -87,6 +92,9 @@ def validate(data):
 
     if is_invalid:
         return False
-        print("Valid format.")
+    print("Valid format.")
     return True
+
+medical_records = str(medical_records)  # This line is for testing the first if statement
 validate(medical_records)
+
