@@ -112,8 +112,13 @@ step 5
 # Add the key patient_id to the constraints dictionary. 
 # For its value, use a call to isinstance passing in patient_id and str as the arguments.
 
+# Step 24
+# As you wrote in the previous step, patient_id should be a string. 
+# You want to check that it also has a specific pattern though.
+# For that, you are going to use a regular expression. 
+# Therefore, at the top of your code, use the import keyword to import the re module.
 
-
+import re
 medical_records = [
     {
         'patient_id': 'P1001',
