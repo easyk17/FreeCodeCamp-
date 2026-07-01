@@ -246,7 +246,16 @@ step 5
 # On the right side of the and operator, use the list comprehension syntax to create a list made by evaluating isinstance(i, str) for each i in medications.
 
 # --------------------------------------------------------------------------------------------------------------------
+# Step 36
+# The all function returns True if all the elements from the iterable passed to it are truthy, and False otherwise:
 
+# Example Code
+# truthy = [1, 2, 3]
+# print(all(truthy)) # True
+
+# falsy = [0, 1, 2, 3]
+# print(all(falsy)) # False
+# Pass the list [isinstance(i, str) for i in medications] to the all function to ensure that every element in it is a string.
 
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -297,7 +306,7 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
         'age': isinstance(age, int) and age >= 18,
         'gender: isinstance(gender, str) and gender.lower() in ('male', 'female'),
         'diagnosis': isinstance(diagnosis, str) or diagnosis is None,
-        'medications': isinstance(medications, list) and [isinstance(i, str) for i in medications],
+        'medications': isinstance(medications, list) and all([isinstance(i, str) for i in medications]),
     }
     return constraints
 
