@@ -272,6 +272,16 @@ Step 39
 # Now that your constraints dictionary is complete, you'll change the return statement of find_invalid_records to make it return a list of the invalid keys.
 # Using the list comprehension syntax, return a list that evaluates key for each key, value in constraints.items().
 
+# Step 40
+# List comprehensions also accepts if clauses to filter out items from an iterable:
+
+# Example Code
+# nums = [1, 2, 3, 4, 5, 6]
+# even_nums = [num for num in nums if num % 2 == 0]
+# print(even_nums) # [2, 4, 6]
+# Since you want to return a list containing only invalid keys, add an if clause to your comprehension so that each key is added to the list only when value is falsy.
+
+
 # --------------------------------------------------------------------------------------------------------------------
 
 import re
@@ -319,7 +329,7 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
         'medications': isinstance(medications, list) and all([isinstance(i, str) for i in medications]),
         'last_visit_id': isinstance(last_visit_id, str) and re.fullmatch('v\d+', last_visit_id, re.IGNORECASE)
     }
-    return [key for key, value in constraints.items()]
+    return [key for key, value in constraints.items() if not value]
 
 def validate(data):
     is_sequence = isinstance(data, (list, tuple))
