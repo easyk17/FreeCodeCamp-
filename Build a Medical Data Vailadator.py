@@ -132,6 +132,22 @@ step 5
 # print(re.search('Hello', greeting)) # <re.Match object; span=(0, 5), match='Hello'>
 # Call re.search with the string p as the first argument and patient_id as the second argument. Use the and operator to add the function call as a second expression to the value of your patient_id key.
 
+# Step 26
+# Now you can see {'patient_id': None} printed to the terminal because the lowercase p does not match P1001 and the and operator returns the first falsy value of the expression.
+
+# You want to ensure that the patient ID starts with the letter p, but it can be either lowercase or uppercase. To modify the matching behavior of regular expressions, you can use flags. For example, re.search accepts a third argument to specify any flags:
+
+# Example Code
+# import re
+
+# greeting = "Hello there!"
+# print(re.search('hello', greeting)) # None
+
+# print(re.search('hello', greeting, re.IGNORECASE))
+# <re.Match object; span=(0, 5), match='Hello'>
+# Add re.IGNORECASE as the third argument to your re.search call. This will make your regex search case insensitive.
+
+# After that, you'll see None replaced by the match object <re.Match object; span=(0, 1), match='P'>, where match indicates the match and span indicates its location in the string.
 import re
 medical_records = [
     {
@@ -170,7 +186,7 @@ medical_records = [
 ]
 def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_visit_id):
     constraints = {
-        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id),
+        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id, re.IGNORECASE),
         'age': isinstance(age, int) and 0 <= age <= 120,
         'gender
 
