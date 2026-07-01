@@ -21,6 +21,13 @@
 # Use index and dictionary as iteration variables.
 # For now use pass to fill the loop body.
 
+# Step 9
+# You are checking if the data passed to your function is a list or a tuple. 
+# You still need to ensure that each item in the sequence is a dictionary.
+# Inside your for loop, if the item in dictionary is not an instance of dict, 
+# print Invalid format: expected a dictionary at position <index>. 
+# (where <index> should be replaced by the current index) and set is_invalid to True.
+
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -63,5 +70,6 @@ def validate(data):
         return False
     is_invalid = False
     for index, dictionary in enumerate(data):
-        pass
-
+        if not isinstance(dictionary, dict):
+            print(f"Invalid format: expected a dictionary at position {index}.")
+            is_invalid = True
