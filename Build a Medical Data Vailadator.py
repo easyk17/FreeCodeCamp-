@@ -268,7 +268,9 @@ step 5
 # On the right side of the and operator, use the fullmatch function from the re module to ensure that last_visit_id starts with the letter v (either lowercase or uppercase) followed by one or more digits.
 
 # --------------------------------------------------------------------------------------------------------------------
-
+Step 39
+# Now that your constraints dictionary is complete, you'll change the return statement of find_invalid_records to make it return a list of the invalid keys.
+# Using the list comprehension syntax, return a list that evaluates key for each key, value in constraints.items().
 
 # --------------------------------------------------------------------------------------------------------------------
 
@@ -317,7 +319,7 @@ def find_invalid_records(patient_id, age, gender, diagnosis, medications, last_v
         'medications': isinstance(medications, list) and all([isinstance(i, str) for i in medications]),
         'last_visit_id': isinstance(last_visit_id, str) and re.fullmatch('v\d+', last_visit_id, re.IGNORECASE)
     }
-    return constraints
+    return [key for key, value in constraints.items()]
 
 def validate(data):
     is_sequence = isinstance(data, (list, tuple))
