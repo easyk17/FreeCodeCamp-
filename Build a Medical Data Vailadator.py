@@ -91,6 +91,19 @@ step 5
 # Inside your new function, create an empty dictionary named constraints. 
 # Then, return constraints from your new function.
 
+# # Step 22
+# The ** operator can be used to unpack the elements in a dictionary and 
+# pass them as keyword arguments in a function call:
+
+# Example Code
+# def sum(a, b, c):
+#     return a + b + c
+# nums = {'a': 2, 'b': 4, 'c': 1}
+
+# print(sum(**nums)) # 7
+# In the example above, sum(**nums) is equivalent to sum(a=2, b=4, c=1).
+# At the bottom of your code, print the result of calling the find_invalid_records function. For its arguments, use the ** operator to unpack medical_records[0].
+
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -152,3 +165,4 @@ def validate(data):
 
 validate(medical_records)
 
+print(find_invalid_records(**medical_records[0]))
