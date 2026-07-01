@@ -81,12 +81,14 @@ step 5
 # To test that everything is working correctly, try to comment out the age key from the first dictionary in medical_records.
 # You should see a validation message appear in the terminal.
 
+# Step 20
+# Now restore the line 'age': 34,.
 
 
 medical_records = [
     {
         'patient_id': 'P1001',
-        # 'age': 34,
+        'age': 34,
         'gender': 'Female',
         'diagnosis': 'Hypertension',
         'medications': ['Lisinopril'],
