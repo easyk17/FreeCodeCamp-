@@ -77,10 +77,16 @@ step 5
 # Within the new if statement, print Invalid format: <dictionary> at position <index> has missing and/or invalid keys. 
 # (where <dictionary> and <index> should be replaced by the dictionary and index at the current iteration) and set is_invalid to True.
 
+# Step 19
+# To test that everything is working correctly, try to comment out the age key from the first dictionary in medical_records.
+# You should see a validation message appear in the terminal.
+
+
+
 medical_records = [
     {
         'patient_id': 'P1001',
-        'age': 34,
+        # 'age': 34,
         'gender': 'Female',
         'diagnosis': 'Hypertension',
         'medications': ['Lisinopril'],
