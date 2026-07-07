@@ -49,17 +49,33 @@
 # This allows you to retrieve the values that were stored during initialization.
 
 # Try printing the name and instrument_type attributes of both your instances. You'll be able to see the values you assigned when you created them.
-# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 7
+# Now that you understand how to access object attributes, remove the existing print calls.
+# # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 9
+# Inside your play method, use print() to display a message about playing the instrument.
+
+# Use an f-string to include the instrument's name in the message: The [instrument name] is fun to play!. The [instrument name] should be replaced with the actual name of the instrument.
+# # # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Step 10
+# Next, add another method to your class named get_fact that returns a fact about the instrument.
+
+# This method should have only the self parameter and return an f-string that says The [instrument name] is part of the [instrument type] family of instruments.
+
+# Unlike the play method which prints a message directly, this method should return a string that can be used elsewhere in your code.
+# # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class MusicalInstrument:
     def __init__(self, name, instrument_type):
         self.name = name
         self.instrument_type = instrument_type
 
+    def play(self):
+        print(f"The {self.name} is fun to play!")
+
+    def get_fact(self):
+        return f"The {self.name} is part of the {self.instrument_type} family of instruments."
+
 instrument_1 = MusicalInstrument("Oboe", "Woodwind")
 instrument_2 = MusicalInstrument("Trumpet", "Brass")
-
-print(instrument_1.name)  # Output: Oboe
-print(instrument_1.instrument_type)  # Output: Woodwind     
-print(instrument_2.name)  # Output: Trumpet
-print(instrument_2.instrument_type)  # Output: Brass
