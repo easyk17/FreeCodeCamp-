@@ -90,7 +90,11 @@
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Step 22
 # Now add a header to the email display. In the display_full_email method, after calling mark_as_read(), print \n--- Email --- to start the email display with a clear header.
-#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 23
+# Now display the sender and receiver information. To show who sent and received the email, add two print statements to the display_full_email method in this format:
+# From: sender where sender is replaced with the sender's name
+# To: receiver where receiver is replaced with the receiver's name
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -113,7 +117,8 @@ class Email:
     def display_full_email(self):
         self.mark_as_read()  # Mark the email as read when displaying it        
         print("\n--- Email ---")
-
+        print(f"From: {self.sender.name}")  # Display the sender's name
+        print(f"To: {self.receiver.name}")  # Display the receiver's name
 class User:
     def __init__(self, name):
         self.name = name
