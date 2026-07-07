@@ -75,7 +75,9 @@
 # Now it's time to test the complete email system! Create two users and see the email functionality in action.
 # Create two User objects: alice with name "Alice" and bob with name "Bob". This will demonstrate how users can be created and interact with each other.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 18
+# Have Alice send an email to Bob to see if the email delivery works correctly.
+# Use Alice's send_email method to send Bob an email with subject "Hello" and body "Hi Bob, how are you?".
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -105,3 +107,4 @@ class Inbox:
 
 alice = User("Alice")
 bob = User("Bob")
+alice.send_email(bob, "Hello", "Hi Bob!")
