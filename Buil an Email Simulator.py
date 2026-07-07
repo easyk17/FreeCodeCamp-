@@ -20,9 +20,9 @@
 # Emails should track whether they've been read or not. 
 # Add a read attribute to the __init__ method and set it to False by default, since new emails start as unread.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
+# Step 6
+# Now test that the read attribute was added correctly to your Email class. 
+# Since you already have an email object from the previous steps, print the read attribute to see that it's now False by default.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -71,3 +71,4 @@ class Email:
 email_obj = Email("alice@example.com", "bob@example.com", "Hello", "Hi Bob!")
 print(email_obj.sender)
 print(email_obj.subject)
+print(email_obj.read)  # This should print False, indicating the email is unread
