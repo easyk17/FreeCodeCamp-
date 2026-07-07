@@ -135,8 +135,10 @@ class Email:
         print(f"Subject: {self.subject}")  # Display the subject of the email
         print(f"Body: {self.body}")  # Display the body of the email
         print('------------\n')
-    def _)str__(self):
+    def __str__(self):
             status = 'Read' if self.read else 'Unread'  # Determine the read status     
+            return f"[{status}] From: {self.sender.name} | Subject: {self.subject}"
+
     
 class User:
     def __init__(self, name):
