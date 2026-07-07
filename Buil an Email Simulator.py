@@ -82,6 +82,11 @@
 # Step 19
 # Now verify that the email was delivered successfully by printing the length of Bob's inbox emails.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 21
+# Users need a way to read their emails properly.
+
+# Add a display_full_email method to the Email class that takes only self as a parameter. Inside this method, call mark_as_read() method to mark the email as read when someone views it.
+# This method would be used to display the email's full content in a nicely formatted way.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -103,6 +108,8 @@ class Email:
         self.read = False  # New emails start as unread
     def mark_as_read(self):
         self.read = True  # Mark the email as read
+    def display_full_email(self):
+        self.mark_as_read()  # Mark the email as read when displaying it        
 
 class User:
     def __init__(self, name):
@@ -117,8 +124,3 @@ class Inbox:
         self.emails = []  # Initialize an empty list of emails
     def receive_email(self, email):
         self.emails.append(email)  # Add the email to the inbox
-
-alice = User("Alice")
-bob = User("Bob")
-alice.send_email(bob, "Hello", "Hi Bob!")
-print(len(bob.inbox.emails))  # Verify that the email was delivered successfully
