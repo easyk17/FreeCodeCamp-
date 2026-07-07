@@ -65,6 +65,28 @@
 
 # Unlike the play method which prints a message directly, this method should return a string that can be used elsewhere in your code.
 # # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 11
+# Now use the methods you created.
+
+# Call the play() method on your instrument_1 instance. This will print the message about playing the Oboe.
+
+# To call a method on an instance, use the dot notation:
+
+# Example Code
+# instance_name.method_name()
+# # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Step 12
+# Now, call the get_fact() method on the instrument_1 instance and print the result.
+
+# Since get_fact() returns a string instead of printing it directly, you need to use print() to display the returned string.
+# 
+# # # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 
+# 
+# # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class MusicalInstrument:
     def __init__(self, name, instrument_type):
@@ -81,3 +103,4 @@ instrument_1 = MusicalInstrument("Oboe", "Woodwind")
 instrument_2 = MusicalInstrument("Trumpet", "Brass")
 
 instrument_1.play()
+print(instrument_1.get_fact())
