@@ -63,9 +63,10 @@
 # Now it's time to connect the User and Inbox classes so that emails can actually be delivered!
 # Users need to have proper Inbox objects instead of simple lists, and the send_email method should deliver emails to the receiver's inbox.
 # Update the User class __init__ in a way that each user gets an actual Inbox object instead of an empty list created earlier.
-#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
+# #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 15
+# Your inbox needs a way to receive new emails. When someone sends an email to a user, it should be added to their inbox.
+# Add a method called receive_email to your Inbox class that takes self and an email object email as parameters. Within the method body, add the email to the emails list using the append method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class Email:
@@ -82,10 +83,11 @@ class User:
     def __init__(self, name):
         self.name = name
         self.inbox = Inbox()  # Each user has an inbox to store received emails
-        
+
     def send_email(self, receiver, subject, body):
         email=Email(self, receiver, subject, body)
 class Inbox:
     def __init__(self):
         self.emails = []  # Initialize an empty list of emails
-    
+    def receive_email(self, email):
+        self.emails.append(email)  # Add the email to the inbox
