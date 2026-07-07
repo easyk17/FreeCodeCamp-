@@ -68,6 +68,16 @@
 # Your inbox needs a way to receive new emails. When someone sends an email to a user, it should be added to their inbox.
 # Add a method called receive_email to your Inbox class that takes self and an email object email as parameters. Within the method body, add the email to the emails list using the append method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 16
+# Still within the send_email method, call the receive_email method of the receiver's inbox to add email to the receiver's inbox.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 17
+# Now it's time to test the complete email system! Create two users and see the email functionality in action.
+# Create two User objects: alice with name "Alice" and bob with name "Bob". This will demonstrate how users can be created and interact with each other.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 class Email:
     def __init__(self, sender, receiver, subject, body):
@@ -86,8 +96,12 @@ class User:
 
     def send_email(self, receiver, subject, body):
         email=Email(self, receiver, subject, body)
+        receiver.inbox.receive_email(email)  # Deliver the email to the receiver's inbox
 class Inbox:
     def __init__(self):
         self.emails = []  # Initialize an empty list of emails
     def receive_email(self, email):
         self.emails.append(email)  # Add the email to the inbox
+
+alice = User("Alice")
+bob = User("Bob")
