@@ -59,3 +59,7 @@ class MusicalInstrument:
 instrument_1 = MusicalInstrument("Oboe", "Woodwind")
 instrument_2 = MusicalInstrument("Trumpet", "Brass")
 
+print(instrument_1.name)  # Output: Oboe
+print(instrument_1.instrument_type)  # Output: Woodwind     
+print(instrument_2.name)  # Output: Trumpet
+print(instrument_2.instrument_type)  # Output: Brass
