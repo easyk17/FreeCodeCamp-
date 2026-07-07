@@ -29,8 +29,9 @@
 # This method will be simple - it just needs to set the read attribute to True.
 # Add a method called mark_as_read to your Email class. This method should take only self as a parameter and set the read attribute to True.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
+# Step 8
+# Now, test the mark_as_read method you created in the Email class. Use the method on the existing Email object email_obj to change the status. 
+# After marking the email as read, print the read attribute of email_obj to confirm the change.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -75,3 +76,5 @@ email_obj = Email("alice@example.com", "bob@example.com", "Hello", "Hi Bob!")
 print(email_obj.sender)
 print(email_obj.subject)
 print(email_obj.read)  # This should print False, indicating the email is unread
+email_obj.mark_as_read()  # Mark the email as read
+print(email_obj.read)  # This should print True, indicating the email is now read
