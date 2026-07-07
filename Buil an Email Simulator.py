@@ -88,6 +88,8 @@
 # Add a display_full_email method to the Email class that takes only self as a parameter. Inside this method, call mark_as_read() method to mark the email as read when someone views it.
 # This method would be used to display the email's full content in a nicely formatted way.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 22
+# Now add a header to the email display. In the display_full_email method, after calling mark_as_read(), print \n--- Email --- to start the email display with a clear header.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -110,6 +112,7 @@ class Email:
         self.read = True  # Mark the email as read
     def display_full_email(self):
         self.mark_as_read()  # Mark the email as read when displaying it        
+        print("\n--- Email ---")
 
 class User:
     def __init__(self, name):
