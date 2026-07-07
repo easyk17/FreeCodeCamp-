@@ -33,9 +33,8 @@
 # Now, test the mark_as_read method you created in the Email class. Use the method on the existing Email object email_obj to change the status. 
 # After marking the email as read, print the read attribute of email_obj to confirm the change.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
+# Step 9
+# Remove the email_obj and the following print statements.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -71,10 +70,3 @@ class Email:
         self.read = False  # New emails start as unread
     def mark_as_read(self):
         self.read = True  # Mark the email as read
-
-email_obj = Email("alice@example.com", "bob@example.com", "Hello", "Hi Bob!")
-print(email_obj.sender)
-print(email_obj.subject)
-print(email_obj.read)  # This should print False, indicating the email is unread
-email_obj.mark_as_read()  # Mark the email as read
-print(email_obj.read)  # This should print True, indicating the email is now read
