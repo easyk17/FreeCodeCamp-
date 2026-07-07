@@ -16,9 +16,9 @@
 # Create an email object named email_obj with alice@example.com as the sender, bob@example.com as the receiver, Hello as the subject, and Hi Bob! as the body. 
 # Then print the sender and subject attributes as separate print statements to verify they are stored correctly.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
+# Step 5
+# Emails should track whether they've been read or not. 
+# Add a read attribute to the __init__ method and set it to False by default, since new emails start as unread.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -61,11 +61,13 @@
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class Email:
-    def__init__(self, sender, receiver, subject, body):
+    def __init__(self, sender, receiver, subject, body):
         self.sender = sender
         self.receiver = receiver
         self.subject = subject
         self.body = body
+        self.read = False  # New emails start as unread
+
 email_obj = Email("alice@example.com", "bob@example.com", "Hello", "Hi Bob!")
 print(email_obj.sender)
 print(email_obj.subject)
