@@ -79,3 +79,5 @@ class MusicalInstrument:
 
 instrument_1 = MusicalInstrument("Oboe", "Woodwind")
 instrument_2 = MusicalInstrument("Trumpet", "Brass")
+
+instrument_1.play()
