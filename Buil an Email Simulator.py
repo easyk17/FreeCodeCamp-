@@ -41,10 +41,14 @@
 # Each user will have a name and will be able to perform email operations.
 # Create a User class with an __init__ method that takes self and name as parameters. Within the class, assign the name parameter to self.name.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+# Step 11
+# The User class needs a method to send emails to other users. When sending an email, you'll create a new Email object and add it to the receiver's inbox.
+# Create a method called send_email in your User class. This method should take parameters for receiver, subject, and body.
+# Inside the method, create a new Email object with the following parameter values and assign it to a variable named email:
+# sender: self (the current user)
+# receiver: receiver (the user receiving the email)
+# subject: subject (the subject of the email)
+# body: body (the body of the email)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -74,3 +78,7 @@ class Email:
 class User:
     def __init__(self, name):
         self.name = name
+    
+    def send_email(self, receiver, subject, body):
+        email=Email(self, receiver, subject, body)
+        
