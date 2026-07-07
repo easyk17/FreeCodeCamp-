@@ -112,6 +112,10 @@
 # y = 'Even' if x % 2 == 0 else 'Odd' # y will be Even
 # Within the method, before, use conditional expression to assign the string Read to a variable status if the email is read and Unread if it is not.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 30
+# Now you'll create a method to list all emails in the inbox. This method should handle the case where the inbox is empty and display a numbered list of emails when there are emails present.
+# Add a method called list_emails to your Inbox class that takes self as a parameter. First, create an if statement to check if the inbox is empty by testing the emails list. If it's empty, print the message Your inbox is empty.\n. 
+# Add a return statement to exit the method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -153,3 +157,7 @@ class Inbox:
         self.emails = []  # Initialize an empty list of emails
     def receive_email(self, email):
         self.emails.append(email)  # Add the email to the inbox
+    def list_emails(self):
+        if not self.emails:
+            print("Your inbox is empty.\n")  # Handle the case where the inbox is empty
+            return
