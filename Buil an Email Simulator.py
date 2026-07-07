@@ -36,10 +36,10 @@
 # Step 9
 # Remove the email_obj and the following print statements.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+# Step 10
+# Now that you have an initial setup of the Email class, it's time to create users who can send and receive emails. 
+# Each user will have a name and will be able to perform email operations.
+# Create a User class with an __init__ method that takes self and name as parameters. Within the class, assign the name parameter to self.name.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -70,3 +70,7 @@ class Email:
         self.read = False  # New emails start as unread
     def mark_as_read(self):
         self.read = True  # Mark the email as read
+
+class User:
+    def __init__(self, name):
+        self.name = name
