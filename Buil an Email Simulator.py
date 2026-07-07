@@ -100,6 +100,8 @@
 # Now add the subject line to the email display. In the display_full_email method, add a print statement to show the email's subject in this format:
 # Subject: subject where subject is replaced with the subject of the email
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 25
+# Now add the email body to complete the main content. In the display_full_email method, add another print statement in the format Body: body (where body is the content of the email) to show the email's content.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -123,6 +125,7 @@ class Email:
         print(f"From: {self.sender.name}")  # Display the sender's name
         print(f"To: {self.receiver.name}")  # Display the receiver's name
         print(f"Subject: {self.subject}")  # Display the subject of the email
+        print(f"Body: {self.body}")  # Display the body of the email
 
 class User:
     def __init__(self, name):
