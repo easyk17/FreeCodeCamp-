@@ -54,9 +54,10 @@
 # Now that users can send emails, they need a way to store emails they receive. Each user should have an inbox to collect their emails.
 # Add an inbox attribute to the User class __init__ method and initialize it as an empty list []. This will store all emails that the user receives.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
+# Step 13
+# While users can send emails and have inboxes, a dedicated class is needed to manage inbox operations efficiently.
+# The Inbox class will store a list of emails and provide methods to add new emails, list all emails, and manage them.
+# Create a new class called Inbox with an __init__ method that initializes an empty list called emails.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -81,3 +82,7 @@ class User:
         self.inbox = []  # Initialize an empty inbox
     def send_email(self, receiver, subject, body):
         email=Email(self, receiver, subject, body)
+class Inbox:
+    def __init__(self):
+        self.emails = []  # Initialize an empty list of emails
+    
