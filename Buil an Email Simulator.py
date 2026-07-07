@@ -117,6 +117,13 @@
 # Add a method called list_emails to your Inbox class that takes self as a parameter. First, create an if statement to check if the inbox is empty by testing the emails list. If it's empty, print the message Your inbox is empty.\n. 
 # Add a return statement to exit the method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 31
+# After the empty inbox check, print the message \nYour Emails:. After that, iterate over all emails in the inbox using a for loop with enumeration. This is the syntax for enumeration with a starting number: enumerate(iterable, start=start_number).
+# Use enumeration to number the emails starting from 1. Use i (the index) and email (the email object) as the iteration variables.
+# Inside the loop, print an f-string with the iteration index followed by a ., then a space and the string representation of the email object in this format:
+# Example Code
+# i. string_representation
+# Where i is the index and string_representation is the representation of the email object.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -161,3 +168,6 @@ class Inbox:
         if not self.emails:
             print("Your inbox is empty.\n")  # Handle the case where the inbox is empty
             return
+    print("\nYour Emails:")
+    for i, email in enumerate(self.emails, start=1):
+        print(f"{i}. {email}")  # Print the numbered list of emails
