@@ -103,6 +103,14 @@
 # Step 25
 # Now add the email body to complete the main content. In the display_full_email method, add another print statement in the format Body: body (where body is the content of the email) to show the email's content.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 28
+# Within the __str__ method, you'll show whether an email has been read or not.
+# Conditional expressions allow you to assign a value based on a condition in a single line.
+# Here is an example:
+# Example Code
+# x = 10
+# y = 'Even' if x % 2 == 0 else 'Odd' # y will be Even
+# Within the method, before, use conditional expression to assign the string Read to a variable status if the email is read and Unread if it is not.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -126,7 +134,10 @@ class Email:
         print(f"To: {self.receiver.name}")  # Display the receiver's name
         print(f"Subject: {self.subject}")  # Display the subject of the email
         print(f"Body: {self.body}")  # Display the body of the email
-
+        print('------------\n')
+    def _)str__(self):
+            status = 'Read' if self.read else 'Unread'  # Determine the read status     
+    
 class User:
     def __init__(self, name):
         self.name = name
