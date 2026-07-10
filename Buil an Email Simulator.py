@@ -210,6 +210,20 @@
 # Now you'll create the main function that demonstrates your email simulator.
 # Create the main function and inside it, using the User class, create two users: Tory and Ramy and assign them to variables tory and ramy, respectively.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 49
+# Before sending the emails, add the standard Python idiom if __name__ == '__main__': followed by a call to main(). 
+# This ensures that the main function only runs when the script is executed directly, not when it's imported as a module.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 50
+# Now you'll simulate sending some emails between the users.
+# In your main function, after creating the users, use the send_email method to:
+# Have Tory send an email to the ramy user object with subject Hello and body Hi Ramy, just saying hello!.
+# Have Ramy send an email to the tory user object with subject Re: Hello and body Hi Tory, hope you are fine.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -296,7 +310,11 @@ class Inbox:
 # current_time = datetime.datetime.now()  # Get the current date and time
 # print(current_time.strftime("%H:%M:%S"))  # Print the time in hours:minutes:seconds format
 # Remove the time stamp for later use in Email class when sending and receiving emails. STEP 41 
-
+  
 def main():
     tory = User("Tory")  # Create a user named Tory
     ramy = User("Ramy")  # Create a user named Ramy
+    tory.send_email(ramy, "Hello", "Hi Ramy, just saying hello!")  # Tory sends an email to Ramy
+    ramy.send_email(tory, "Re: Hello", "Hi Tory, hope you are fine.")  # Ramy sends an email to Tory
+if __name__ == '__main__':
+    main()  # Call the main function to run the email simulator 
