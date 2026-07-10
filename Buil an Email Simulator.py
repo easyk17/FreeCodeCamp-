@@ -213,6 +213,7 @@ class Email:
         print(f"From: {self.sender.name}")  # Display the sender's name
         print(f"To: {self.receiver.name}")  # Display the receiver's name
         print(f"Subject: {self.subject}")  # Display the subject of the email
+        print(f"Received: {self.timestamp.strftime('%Y-%m-%d %H:%M')}")  # Display the timestamp of when the email was received
         print(f"Body: {self.body}")  # Display the body of the email
         print('------------\n')
     def __str__(self):
