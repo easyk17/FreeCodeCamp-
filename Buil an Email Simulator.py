@@ -132,7 +132,11 @@
 # First, check if the inbox is empty and print the message Inbox is empty.\n if it is. 
 # Add a return statement after that to exit the method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 33
+# When the inbox is not empty, you'll try to access the email at the given index and display it.
+# Remember in the list_emails method, you displayed email numbers starting from 1, but list indices in Python start from 0. 
+# So, you'll need to convert the 1-based index to a 0-based index by subtracting 1.
+# Within the read_email method, subtract 1 from the index parameter and store it in a variable called actual_index.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,6 +185,8 @@ class Inbox:
         print(f"{i}. {email}")  # Print the numbered list of emails
     
     def read_email(self, index):
+        actual.index = index - 1  # Convert 1-based index to 0-based index
         if not self.emails:
             print("Inbox is empty.\n")  # Handle the case where the inbox is empty
             return
+        
