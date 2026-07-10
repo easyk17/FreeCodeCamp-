@@ -138,10 +138,21 @@
 # So, you'll need to convert the 1-based index to a 0-based index by subtracting 1.
 # Within the read_email method, subtract 1 from the index parameter and store it in a variable called actual_index.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Step 34
-After getting the actual index, create an if statement to check if the actual_index is less than 0 or greater than or equal to the length of the self.emails list. 
-If it is, print the message Invalid email number.\n and use return to exit the method.
+# Step 34
+# After getting the actual index, create an if statement to check if the actual_index is less than 0 or greater than or equal to the length of the self.emails list. 
+# If it is, print the message Invalid email number.\n and use return to exit the method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 35
+# When the email index is valid, access the email at actual_index, call its display_full_email method to show the email content.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 class Email:
     def __init__(self, sender, receiver, subject, body):
@@ -194,3 +205,5 @@ class Inbox:
         if actual_index < 0 or actual_index >= len(self.emails):
             print("Invalid email number.\n")  # Handle invalid index
             return
+        self.emails[actual_index].display_full_email()  # Display the full email content
+        
