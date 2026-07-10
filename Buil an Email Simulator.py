@@ -220,6 +220,16 @@
 # Have Tory send an email to the ramy user object with subject Hello and body Hi Ramy, just saying hello!.
 # Have Ramy send an email to the tory user object with subject Re: Hello and body Hi Tory, hope you are fine.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 51
+# Now you'll demonstrate the inbox functionality. Ramy will check his inbox, read the first email, delete the first email, and then check his inbox again to see the changes.
+
+# In your main function, after sending the emails, add code to:
+
+# Have Ramy check his inbox using the check_inbox method.
+# Have Ramy read the first email.
+# Have Ramy delete the first email.
+# Have Ramy check his inbox again.
+# With this, you have completed the email simulator!
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -316,5 +326,11 @@ def main():
     ramy = User("Ramy")  # Create a user named Ramy
     tory.send_email(ramy, "Hello", "Hi Ramy, just saying hello!")  # Tory sends an email to Ramy
     ramy.send_email(tory, "Re: Hello", "Hi Tory, hope you are fine.")  # Ramy sends an email to Tory
+    ramy.check_inbox()  # Ramy checks his inbox
+    ramy.read_email(1)  # Ramy reads the first email
+    ramy.delete_email(1)
+    ramy.check_inbox()  # Ramy checks his inbox again to see the changes
+
+
 if __name__ == '__main__':
     main()  # Call the main function to run the email simulator 
