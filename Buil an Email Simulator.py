@@ -294,12 +294,12 @@ class Inbox:
         if not self.emails:
             print("Your inbox is empty.\n")  # Handle the case where the inbox is empty
             return
-    print("\nYour Emails:")
-    for i, email in enumerate(self.emails, start=1):
-        print(f"{i}. {email}")  # Print the numbered list of emails
+        print("\nYour Emails:")
+        for i, email in enumerate(self.emails, start=1):
+            print(f"{i}. {email}")  # Print the numbered list of emails
     
     def read_email(self, index):
-        actual.index = index - 1  # Convert 1-based index to 0-based index
+        actual_index = index - 1  # Convert 1-based index to 0-based index
         if not self.emails:
             print("Inbox is empty.\n")  # Handle the case where the inbox is empty
             return
