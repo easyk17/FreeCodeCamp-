@@ -151,10 +151,20 @@
 # Add a method called delete_email to your Inbox class. Like read_email, it should:
 # Take an index parameter, check for an empty inbox, and print the message Inbox is empty.\n if it is. Use return to exit the method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 37
+# You should handle the case where the user tries to delete an email using an invalid index just like you did in the read_email method.
+# Within the delete_email method:
+# Convert the 1-based index parameter to a 0-based index by subtracting 1 and storing it in a variable called actual_index.
+# Create an if statement to check if the actual_index is less than 0 or greater than or equal to the length of the self.emails list. 
+# If it is, print the message Invalid email number.\n and use return to exit the method.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 38
+# When the inbox is not empty, and the email index is valid, delete the email at the given index using the del keyword and print a confirmation message Email deleted.\n.
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -214,3 +224,10 @@ class Inbox:
         if not self.emails:
             print("Inbox is empty.\n")  # Handle the case where the inbox is empty
             return
+        actual_index = index - 1  # Convert 1-based index to 0-based index
+        if actual_index < 0 or actual_index >= len(self.emails):
+            print("Invalid email number.\n")  # Handle invalid index
+            return
+        del self.emails[actual_index]  # Delete the email at the given index
+        print("Email deleted.\n")  # Confirmation message for email deletion
+        
