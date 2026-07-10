@@ -206,6 +206,9 @@
 # Step 47
 # For reading and deleting emails, add two methods to your User class: read_email and delete_email. Both should take an index parameter and call the corresponding method on self.inbox.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 48
+# Now you'll create the main function that demonstrates your email simulator.
+# Create the main function and inside it, using the User class, create two users: Tory and Ramy and assign them to variables tory and ramy, respectively.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -293,3 +296,7 @@ class Inbox:
 # current_time = datetime.datetime.now()  # Get the current date and time
 # print(current_time.strftime("%H:%M:%S"))  # Print the time in hours:minutes:seconds format
 # Remove the time stamp for later use in Email class when sending and receiving emails. STEP 41 
+
+def main():
+    tory = User("Tory")  # Create a user named Tory
+    ramy = User("Ramy")  # Create a user named Ramy
