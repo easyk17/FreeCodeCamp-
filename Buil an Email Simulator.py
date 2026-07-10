@@ -125,8 +125,16 @@
 # i. string_representation
 # Where i is the index and string_representation is the representation of the email object.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 32
+# The inbox needs a method to read a specific email. 
+# When a user wants to read an email, they'll specify which email number (starting from index 0) they want to see, and the method will display the full email content.
+# Add a method called read_email to your Inbox class that takes an index parameter. 
+# First, check if the inbox is empty and print the message Inbox is empty.\n if it is. 
+# Add a return statement after that to exit the method.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class Email:
@@ -171,3 +179,8 @@ class Inbox:
     print("\nYour Emails:")
     for i, email in enumerate(self.emails, start=1):
         print(f"{i}. {email}")  # Print the numbered list of emails
+    
+    def read_email(self, index):
+        if not self.emails:
+            print("Inbox is empty.\n")  # Handle the case where the inbox is empty
+            return
