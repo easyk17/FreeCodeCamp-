@@ -183,7 +183,13 @@
 # Now add timestamps to the emails. In the Email class __init__ method, create a timestamp attribute and assign the current time to it to automatically set a timestamp for when the email was created.
 # This is helpful for tracking when messages were sent and received.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 44
+# Now also show timestamps in the email listing. Update the __str__ method in the Email class to include the timestamp after the subject.
+# Modify the return statement to include the timestamp formatted as '%Y-%m-%d %H:%M' at the end, separated by | Time:.
+# The complete format should be:
+# Example Code
+# [status] From: sender | Subject: subject | Time: time 
+# Where status is the status of the email, sender is the sender's name, subject is the subject of the email, and time is in the format '%Y-%m-%d %H:%M'.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -218,7 +224,7 @@ class Email:
         print('------------\n')
     def __str__(self):
             status = 'Read' if self.read else 'Unread'  # Determine the read status     
-            return f"[{status}] From: {self.sender.name} | Subject: {self.subject}"
+            return f"[{status}] From: {self.sender.name} | Subject: {self.subject} | Time: {self.timestamp.strftime('%Y-%m-%d %H:%M')}"  # Return a string representation of the email
 
     
 class User:
