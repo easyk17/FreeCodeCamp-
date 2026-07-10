@@ -161,13 +161,16 @@
 # Step 38
 # When the inbox is not empty, and the email index is valid, delete the email at the given index using the del keyword and print a confirmation message Email deleted.\n.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 39
+# Now you're ready to add timestamps to the emails to track when they were sent and received.
+# First, import the datetime module at the top of your file.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-
+import datetime  # Import the datetime module to work with timestamps
 class Email:
     def __init__(self, sender, receiver, subject, body):
         self.sender = sender
