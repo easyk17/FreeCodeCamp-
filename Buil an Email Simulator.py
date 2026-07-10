@@ -201,7 +201,10 @@
 # For checking the inbox, add a method called check_inbox to the User class. This method should print a personalized header with the user's name and then display all their emails.
 # The header should be formatted as: \nName's Inbox:, where Name is replaced with the name of the user.
 # After printing the header, call the list_emails() method on the user's inbox.
+
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 47
+# For reading and deleting emails, add two methods to your User class: read_email and delete_email. Both should take an index parameter and call the corresponding method on self.inbox.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -248,6 +251,12 @@ class User:
     def check_inbox(self):
         print(f"\n{self.name}'s Inbox:")  # Personalized header for the user's inbox
         self.inbox.list_emails()  # List all emails in the user's inbox
+
+    def read_email(self, index):
+        self.inbox.read_email(index)
+
+    def delete_email(self, index):
+        self.inbox.delete_email(index)
 
 class Inbox:
     def __init__(self):
