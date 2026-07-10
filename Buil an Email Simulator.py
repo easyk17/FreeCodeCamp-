@@ -179,7 +179,20 @@
 
 # Use these format codes: %H for hours (24-hour format), %M for minutes, and %S for seconds.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 42
+# Now add timestamps to the emails. In the Email class __init__ method, create a timestamp attribute and assign the current time to it to automatically set a timestamp for when the email was created.
+# This is helpful for tracking when messages were sent and received.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
@@ -190,6 +203,7 @@ class Email:
         self.receiver = receiver
         self.subject = subject
         self.body = body
+        self.timestamp = datetime.datetime.now()  # Add a timestamp for when the email was created
         self.read = False  # New emails start as unread
     def mark_as_read(self):
         self.read = True  # Mark the email as read
@@ -246,5 +260,6 @@ class Inbox:
             return
         del self.emails[actual_index]  # Delete the email at the given index
         print("Email deleted.\n")  # Confirmation message for email deletion
-current_time = datetime.datetime.now()  # Get the current date and time
-print(current_time.strftime("%H:%M:%S"))  # Print the time in hours:minutes:seconds format
+# current_time = datetime.datetime.now()  # Get the current date and time
+# print(current_time.strftime("%H:%M:%S"))  # Print the time in hours:minutes:seconds format
+# Remove the time stamp for later use in Email class when sending and receiving emails. STEP 41 
