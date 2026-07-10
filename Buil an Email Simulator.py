@@ -191,7 +191,16 @@
 # [status] From: sender | Subject: subject | Time: time 
 # Where status is the status of the email, sender is the sender's name, subject is the subject of the email, and time is in the format '%Y-%m-%d %H:%M'.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 45
+# Users should get confirmation when they successfully send an email. Improve the user experience by adding feedback to the send_email method.
+
+# In the send_email method of the User class, add a print statement after the email is sent that shows confirmation. The message should be Email sent from [sender_name] to [receiver_name]!\n, where [sender_name] is replaced by the sender's name and [receiver_name] is replaced by the receiver's name.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 46
+# Users should be able to check their inbox, read emails, and delete emails directly through their User object.
+# For checking the inbox, add a method called check_inbox to the User class. This method should print a personalized header with the user's name and then display all their emails.
+# The header should be formatted as: \nName's Inbox:, where Name is replaced with the name of the user.
+# After printing the header, call the list_emails() method on the user's inbox.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -235,6 +244,11 @@ class User:
     def send_email(self, receiver, subject, body):
         email=Email(self, receiver, subject, body)
         receiver.inbox.receive_email(email)  # Deliver the email to the receiver's inbox
+        print(f"Email sent from {self.name} to {receiver.name}!\n")  # Confirmation message
+    def check_inbox(self):
+        print(f"\n{self.name}'s Inbox:")  # Personalized header for the user's inbox
+        self.inbox.list_emails()  # List all emails in the user's inbox
+
 class Inbox:
     def __init__(self):
         self.emails = []  # Initialize an empty list of emails
