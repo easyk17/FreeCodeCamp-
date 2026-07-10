@@ -165,6 +165,19 @@
 # Now you're ready to add timestamps to the emails to track when they were sent and received.
 # First, import the datetime module at the top of your file.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 40
+# Before integrating timestamps into the email system, practice working with datetime formatting. The datetime.datetime.now() function gives the current date and time, and you can use the strftime() method to format it in different ways.
+
+# Here's how strftime() works with format codes:
+
+# Example Code
+# now = datetime.datetime.now()
+# print(now.strftime("%Y-%m-%d"))  # Output: 2024-03-15 (year-month-day with - separator)
+# The format codes like %Y (year), %m (month), %d (day) tell strftime() what to include, and you can add separators like - between them.
+
+# At the bottom of your code, create a variable called current_time and assign it datetime.datetime.now(). Then use strftime() to print the time in hours:minutes:seconds format using : as the separator.
+
+# Use these format codes: %H for hours (24-hour format), %M for minutes, and %S for seconds.
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -233,4 +246,5 @@ class Inbox:
             return
         del self.emails[actual_index]  # Delete the email at the given index
         print("Email deleted.\n")  # Confirmation message for email deletion
-        
+current_time = datetime.datetime.now()  # Get the current date and time
+print(current_time.strftime("%H:%M:%S"))  # Print the time in hours:minutes:seconds format
