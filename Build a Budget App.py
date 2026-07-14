@@ -107,7 +107,70 @@ class Category:
     pass
 
 def create_spend_chart(categories):
-    pass
+    # 1. Title line
+    chart = "Percentage spent by category\n"
+    
+    # 2. Har category ka total spend (withdrawals) nikalna
+    spends = []
+    for category in categories:
+        total_spent = 0
+        for item in category.ledger:
+            # Sirf withdrawals calculate karne hain (amounts less than 0)
+            # Dhyan rahe: transfer method bhi withdraw use karta hai, toh wo bhi negative hota hai
+            if item['amount'] < 0:
+                total_spent += abs(item['amount'])
+        spends.append(total_spent)
+        
+    total_all_spends = sum(spends)
+    
+    # 3. Percentages calculate karna aur nearest 10 par round down karna
+    percentages = []
+    for spend in spends:
+        if total_all_spends > 0:
+            # Round down to nearest 10 (Jaise 66.6% -> 60%)
+            percent = int((spend / total_all_spends) * 100 // 10) * 10
+        else:
+            percent = 0
+        percentages.append(percent)
+        
+    # 4. Y-axis ke numbers (100 se 0) aur 'o' bars banana
+    for i in range(100, -1, -10):
+        # Y-axis label ko right-align karna 3 spaces ki width me (e.g., "100|", " 90|", "  0|")
+        chart += f"{i:>3}|"
+        
+        # Har category ke liye check karna ki kya uska percentage 'i' se bada ya barabar hai
+        for percent in percentages:
+            if percent >= i:
+                chart += " o "
+            else:
+                chart += "   "
+        # Har line ke baad ek extra trailing space aur new line
+        chart += " \n"
+        
+    # 5. Horizontal line banana (2 spaces past the last bar)
+    # 3 spaces numbers ke liye + 1 bar '|' ke liye + (3 spaces * number of categories) + 1 extra space
+    chart += "    " + "-" * (len(categories) * 3 + 1) + "\n"
+    
+    # 6. Category ke names ko vertically niche print karna
+    # Sabse lambe name ki length nikalna
+    max_len = max([len(category.name) for category in categories])
+    
+    # Har character row ke liye loop chalana
+    for r in range(max_len):
+        chart += "    "  # Shuruat me 4 spaces ka gap
+        for category in categories:
+            if r < len(category.name):
+                chart += f" {category.name[r]} "
+            else:
+                chart += "   "  # Agar naam khatam ho gaya toh khali spaces
+        
+        # Aakhiri row ke baad new line nahi aani chahiye (FreeCodeCamp ki strict requirement)
+        if r < max_len - 1:
+            chart += " \n"
+        else:
+            chart += " "  # Last line sirf ek space ke sath end hogi
+            
+    return chart   
 
 
 
@@ -125,10 +188,12 @@ class Category:
             return ''
 
     def withdraw(self, amount, description=''):
+        if self.check_funds(amount):
             transaction = {'amount': -amount, 'description': description}
             self.ledger.append(transaction)
             return True
-          
+        else:
+            return False
 
     
     def get_balance(self):
@@ -136,3 +201,27 @@ class Category:
         for transaction in self.ledger:
             total_balance += transaction['amount']
         return total_balance
+    
+    def transfer(self, amount, category):
+        if self.check_funds(amount):
+            self.withdraw(amount, f'Transfer to {category.name}')
+            category.deposit(amount, f'Transfer from {self.name}')
+            return True
+        else:
+            return False
+        
+    def check_funds(self, amount):
+        if amount > self.get_balance():
+            return False
+        else:
+            return True 
+    
+    def __str__(self):
+        title = f"{self.name:*^30}\n"
+        items = ''
+        for transaction in self.ledger:
+            description = transaction['description'][:23]
+            amount = f"{transaction['amount']:.2f}"
+            items += f"{description:<23}{amount:>7}\n"
+        total = f"Total: {self.get_balance():.2f}"
+        return title + items + total
