@@ -13,7 +13,9 @@
 # Modify both name and level attributes into _name and _level, since these are not supposed to be modified from outside their class.
 # Note that this does not prevent the attribute from being accessed or modified outside the class. Also, in Python there's always a way to access private attributes (prefixed with a double underscore) as well.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 4
+# Add a __str__ method to the Employee class. Make it return an f-string with the format name: level, replacing name and level with the corresponding attributes.
+# After that, print charlie_brown to the console.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -53,5 +55,8 @@ class Employee:
     def __init__(self, name, level):
         self._name = name
         self._level = level
-        
+    def __str__(self):
+        return f"{self._name}: {self._level}"
+        pass
 charlie_brown = Employee("Charlie Brown", "trainee")
+print(charlie_brown)
