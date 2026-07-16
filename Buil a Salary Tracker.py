@@ -53,11 +53,15 @@
 
 # Give your Employee class a __repr__ method with a self parameter, and make it return a string that can be used to instantiate the object.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 12
+# The __repr__ method is called under the hood when you call the repr function. To see it in action, print the result of calling repr(charlie_brown) at the bottom of your code.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 13
+# Remove the last print call from your code.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 14
+# Now it's time to add some validation to the __init__ method. At the beginning of the method, create an if statement that checks if either name or level are not instances of str.
+# Inside the if statement, raise a TypeError with the message 'name' and 'level' attribute must be of type 'str'.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -76,6 +80,9 @@
 
 class Employee:
     def __init__(self, name, level):
+        if not isinstance(name,str) or not isintance(level,str):
+            raise TypeError("'name' and 'level' attribute must be of type 'str'.")
+        
         self._name = name
         self._level = level
     def __str__(self):
@@ -94,3 +101,4 @@ class Employee:
         pass
 
 charlie_brown = Employee("Charlie Brown", "trainee")
+print(charlie_brown)
