@@ -40,10 +40,11 @@
 # Step 7
 # Following what you did in the previous steps, create a getter for the _level attribute.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
+# Step 9
+# Now that you have getters for both _name and _level attributes, update the string returned by __str__ to use self.name and self.level. This will call the getters instead of directly accessing the attributes.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 10
+# Now remove the last two print calls.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -73,7 +74,7 @@ class Employee:
         self._name = name
         self._level = level
     def __str__(self):
-        return f"{self._name}: {self._level}"
+        return f"{self.name}: {self.level}"
         pass
     @property
     def name(self):
@@ -85,5 +86,3 @@ class Employee:
         pass
 
 charlie_brown = Employee("Charlie Brown", "trainee")
-print(charlie_brown)
-print(charlie_brown.name)
