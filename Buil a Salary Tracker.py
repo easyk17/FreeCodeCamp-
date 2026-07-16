@@ -46,7 +46,12 @@
 # Step 10
 # Now remove the last two print calls.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 11
+# The __repr__ method is a special method that is supposed to return a string representation of the object that can be used to instantiate it.
 
+# For example, the __repr__ method of Employee('Charlie', 'developer') should return the string Employee('Charlie', 'developer'), which is the same string used to create the object.
+
+# Give your Employee class a __repr__ method with a self parameter, and make it return a string that can be used to instantiate the object.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -75,6 +80,9 @@ class Employee:
         self._level = level
     def __str__(self):
         return f"{self.name}: {self.level}"
+        pass
+    def __repr__(self):
+        return f"Employee('{self.name}', '{self.level}')"
         pass
     @property
     def name(self):
