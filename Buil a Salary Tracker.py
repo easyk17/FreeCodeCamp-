@@ -17,8 +17,24 @@
 # Add a __str__ method to the Employee class. Make it return an f-string with the format name: level, replacing name and level with the corresponding attributes.
 # After that, print charlie_brown to the console.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 5
+# The @property decorator is used in Python to turn a method into a property. It is typically used to define getter methods, which are methods used to retrieve the value of an attribute:
 
+# Example Code
+# class Person:
+#     def __init__(self, name):
+#         self._name = name
+
+#     @property
+#     def name(self):
+#         return self._name
+
+# p = Person('Alice')
+# print(p.name)  # Alice
+# Create a method named name with a self parameter and decorate it with @property. Inside the method, return self._name.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 6
+# Now that you defined a getter for name, you can access the _name attribute through the name property. So print charlie_brown.name to the console.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -58,5 +74,11 @@ class Employee:
     def __str__(self):
         return f"{self._name}: {self._level}"
         pass
+    @property
+    def name(self):
+        return self._name
+        pass
+
 charlie_brown = Employee("Charlie Brown", "trainee")
 print(charlie_brown)
+print(charlie_brown.name)
