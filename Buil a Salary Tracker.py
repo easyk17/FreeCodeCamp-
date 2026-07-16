@@ -37,7 +37,8 @@
 # Now that you defined a getter for name, you can access the _name attribute through the name property. So print charlie_brown.name to the console.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+# Step 7
+# Following what you did in the previous steps, create a getter for the _level attribute.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -77,6 +78,10 @@ class Employee:
     @property
     def name(self):
         return self._name
+        pass
+    @property
+    def level(self):
+        return self._level
         pass
 
 charlie_brown = Employee("Charlie Brown", "trainee")
