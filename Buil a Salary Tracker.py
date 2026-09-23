@@ -74,7 +74,12 @@
 #     'senior': 4000
 # }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Step 16
+# The level used to instantiate an employee should be chosen among specific levels. You'll use _base_salaries to validate the level and set the right salary for the employee.
 
+# After your existing if statement, create another if that checks if level is not in Employee._base_salaries.
+
+# Inside the new if statement, raise a ValueError with the message Invalid value '{level}' for 'level' attribute., where {level} should be replaced by the value of the level argument.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -98,23 +103,27 @@ class Employee:
     def __init__(self, name, level):
         if not isinstance(name, str) or not isinstance(level, str):
             raise TypeError("'name' and 'level' attribute must be of type 'str'.")
-        
+
+        if level not in Employee._base_salaries:
+            raise ValueError(f"Invalid value '{level}' for 'level' attribute.")
+
         self._name = name
         self._level = level
+        self._salary = Employee._base_salaries[level]
     def __str__(self):
         return f"{self.name}: {self.level}"
-        pass
+        
     def __repr__(self):
         return f"Employee('{self.name}', '{self.level}')"
-        pass
+        
     @property
     def name(self):
         return self._name
-        pass
+        
     @property
     def level(self):
         return self._level
-        pass
+        
 
 charlie_brown = Employee("Charlie Brown", "trainee")
 print(charlie_brown)
