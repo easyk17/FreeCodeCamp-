@@ -1,40 +1,66 @@
-# FreeCodeCamp Python Certification Projects
+# 🐍 FreeCodeCamp Python Certification Journey
 
-Welcome to my learning repository! This is where I document my journey through **FreeCodeCamp's Scientific Computing with Python Certification**. It contains all my lab solutions, workshop exercises, and certification projects.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square&logo=python)
+![FreeCodeCamp](https://img.shields.io/badge/FreeCodeCamp-Certification-0a0a23?style=flat-square&logo=freecodecamp)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-## 📖 About This Repository
-
-I am building this repository as I progress through the FreeCodeCamp Python curriculum. The goal is to master core Python concepts, data structures, algorithms, and object-oriented programming by solving real-world problems and building practical projects.
-
-Each file in this repository represents a milestone in my learning journey.
-
----
-
-## 📂 Folder Structure
-
-Here is what you will find in this repository:
-
-| File / Folder | Description |
-| :--- | :--- |
-| **`bisection_lab.py`** | Implementation of the Bisection Method to find the square root of a number using Binary Search logic. |
-| **`log_finder_project/`** | A real-world project where I generate 10,000 dummy logs and search for a specific timestamp using the Binary Search algorithm. |
-| **`Build a Budget App.py`** | FreeCodeCamp Certification Project - A category-based budget tracking system using Object-Oriented Programming. |
-| **`Medical Data Validator.py`** | A lab that validates medical data using string manipulation and mathematical checks. |
-| **`Build a Polygon Area Calculator.py`** | Certification Project - A class-based program to calculate the area of rectangles and squares. |
-| **`Debug an ISBN Validator.py`** | Debugging exercise for ISBN validation logic. |
-| **`Debug a Game Character Tracker.py`** | Debugging exercise involving game character stats and dictionaries. |
-| *(Update this table as you add more files)* | |
+> Documenting my journey to master Python through FreeCodeCamp's Scientific Computing with Python Certification. This repository contains all my lab solutions, workshops, and certification projects — written from scratch, not copy-pasted.
 
 ---
 
-## 🚀 How to Run
+## 📖 Table of Contents
 
-To run any of the Python files in this repository:
+- [About This Repository](#-about-this-repository)
+- [Learning Roadmap](#-learning-roadmap)
+- [Project Structure](#-project-structure)
+    - [Phase 1: Python Fundamentals](#phase-1-python-fundamentals)
+    - [Phase 2: Algorithms & Problem Solving](#phase-2-algorithms--problem-solving)
+    - [Phase 3: Certification Projects](#phase-3-certification-projects)
+- [Skills Demonstrated](#-skills-demonstrated)
+- [How to Run](#-how-to-run)
+- [Progress Tracker](#-progress-tracker)
+- [Connect With Me](#-connect-with-me)
 
-1.  Make sure you have **Python 3.x** installed on your system.
-2.  Open your terminal or command prompt.
-3.  Navigate to the folder containing the file.
-4.  Run the following command:
+---
 
-```bash
-python filename.py
+## 🎯 About This Repository
+
+This repository is my **public learning journal**. Every file here represents hours of thinking, debugging, and understanding — not copy-pasting.
+
+**My Philosophy:** *"AI is a mentor, not a replacement."* I use AI to understand concepts, but I write every line of code myself.
+
+**What makes this repo different:**
+- ✅ Every project is hand-written and tested
+- ✅ Code is commented and readable
+- ✅ Learning notes included where necessary
+- ✅ Real-world applications beyond FCC curriculum
+
+---
+
+## 🗺️ Learning Roadmap
+
+FreeCodeCamp's Python curriculum is structured progressively. Here's my journey:
+
+```text
+Python Fundamentals
+    ├── Variables, Loops, Conditionals
+    ├── Functions & Parameters
+    ├── Data Structures (Lists, Dicts, Sets)
+    └── Object-Oriented Programming (Classes)
+            │
+            ▼
+Algorithms & Problem Solving
+    ├── Binary Search (Bisection Method) ✅
+    ├── Selection Sort 🔄
+    ├── Merge Sort 📅
+    ├── Quick Sort 📅
+    └── Luhn Algorithm 📅
+            │
+            ▼
+Certification Projects
+    ├── Budget App ✅
+    ├── Polygon Area Calculator ✅
+    ├── Time Calculator 📅
+    ├── Arithmetic Formatter 📅
+    └── Probability Calculator 📅
