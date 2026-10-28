@@ -1,66 +1,73 @@
-# 🐍 FreeCodeCamp Python Certification Journey
+# FreeCodeCamp Python Certification — Learning Journey
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square&logo=python)
-![FreeCodeCamp](https://img.shields.io/badge/FreeCodeCamp-Certification-0a0a23?style=flat-square&logo=freecodecamp)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+**Current Progress:** 470 / 579 steps completed (81%) · 4 of 5 certification projects done
 
-> Documenting my journey to master Python through FreeCodeCamp's Scientific Computing with Python Certification. This repository contains all my lab solutions, workshops, and certification projects — written from scratch, not copy-pasted.
+I am working through FreeCodeCamp's **Scientific Computing with Python** certification. This repository contains my solutions to labs, workshops, and certification projects — written by me, with AI used only as a mentor for concept clarity.
 
 ---
 
-## 📖 Table of Contents
+## 🎯 What I'm Working On
 
-- [About This Repository](#-about-this-repository)
-- [Learning Roadmap](#-learning-roadmap)
-- [Project Structure](#-project-structure)
-    - [Phase 1: Python Fundamentals](#phase-1-python-fundamentals)
-    - [Phase 2: Algorithms & Problem Solving](#phase-2-algorithms--problem-solving)
-    - [Phase 3: Certification Projects](#phase-3-certification-projects)
-- [Skills Demonstrated](#-skills-demonstrated)
-- [How to Run](#-how-to-run)
-- [Progress Tracker](#-progress-tracker)
-- [Connect With Me](#-connect-with-me)
+**Right now:** Finishing the last certification project and moving into algorithm implementations (Selection Sort, Merge Sort, Quick Sort, Luhn Algorithm).
+
+**Approach:** I write pseudocode on paper first, then implement. If I get stuck, I ask AI to explain the "why" — not to write code for me.
 
 ---
 
-## 🎯 About This Repository
+## 📂 Key Projects
 
-This repository is my **public learning journal**. Every file here represents hours of thinking, debugging, and understanding — not copy-pasting.
+### 1. `log_finder_project/`
+**What it does:** Generates 10,000 timestamped log entries, sorts them, and searches for a target timestamp using **Binary Search**.
+**Why it matters:** This was my first real-world application of Binary Search outside FreeCodeCamp. I measured the difference between linear search (~10,000 checks) and binary search (~14 checks) on the same data.
 
-**My Philosophy:** *"AI is a mentor, not a replacement."* I use AI to understand concepts, but I write every line of code myself.
+### 2. `bisection_lab.py`
+**What it does:** Finds the square root of a number using the **Bisection Method** (binary search on a number line), with configurable tolerance and iteration limit.
+**Concepts used:** Edge cases (negative numbers, 0, 1, numbers < 1), tolerance-based convergence, loop control.
 
-**What makes this repo different:**
-- ✅ Every project is hand-written and tested
-- ✅ Code is commented and readable
-- ✅ Learning notes included where necessary
-- ✅ Real-world applications beyond FCC curriculum
+### 3. `build_a_budget_app.py`
+**What it does:** A category-based budget tracker built with **Object-Oriented Programming** — classes, methods, and formatted output.
+**Status:** Certification project — completed and tested against FreeCodeCamp's test suite.
+
+> More files are listed in the table below. These three are the strongest representations of what I can build right now.
 
 ---
 
-## 🗺️ Learning Roadmap
+## 📋 All Files
 
-FreeCodeCamp's Python curriculum is structured progressively. Here's my journey:
+| File | Description | Concepts |
+| :--- | :--- | :--- |
+| `bisection_lab.py` | Square root via Bisection Method | Binary Search, Tolerance, Edge Cases |
+| `square_root_bisection.py` | Alternative square root implementation | Loops, Conditionals |
+| `log_finder_project/` | 10,000 logs + Binary Search | File I/O, Sorting, Algorithm Analysis |
+| `build_a_budget_app.py` | Category-based budget tracker | OOP, Dicts, `__str__` |
+| `build_a_polygon_area_calculator.py` | Rectangle/Square area calculator | OOP, Inheritance |
+| `build_a_medical_data_validator.py` | Validates medical records | String Slicing, Formatting |
+| `build_a_salary_tracker.py` | Employee salary tracking | Dicts, Aggregation |
+| `build_an_email_simulator.py` | Email inbox simulation | Lists, String Manipulation |
+| `build_a_discount_calculator.py` | Discount-based price calculation | Math, Conditionals |
+| `build_a_media_catalogue.py` | Media item catalogue | Nested Dicts, OOP |
+| `build_a_planet_class.py` | Planet class with properties | Classes, `__str__` |
+| `workshop_musical_instrument_inventory.py` | Instrument inventory manager | Dicts, Loops |
+| `debug_an_isbn_validator.py` | Fixed ISBN validation logic | Debugging |
+| `debug_a_game_character_tracker.py` | Fixed character stat tracking | Debugging, Dicts |
 
-```text
-Python Fundamentals
-    ├── Variables, Loops, Conditionals
-    ├── Functions & Parameters
-    ├── Data Structures (Lists, Dicts, Sets)
-    └── Object-Oriented Programming (Classes)
-            │
-            ▼
-Algorithms & Problem Solving
-    ├── Binary Search (Bisection Method) ✅
-    ├── Selection Sort 🔄
-    ├── Merge Sort 📅
-    ├── Quick Sort 📅
-    └── Luhn Algorithm 📅
-            │
-            ▼
-Certification Projects
-    ├── Budget App ✅
-    ├── Polygon Area Calculator ✅
-    ├── Time Calculator 📅
-    ├── Arithmetic Formatter 📅
-    └── Probability Calculator 📅
+---
+
+## 🧠 Skills Demonstrated
+
+**Core Python:** Functions, loops, conditionals, list comprehensions, error handling (`try`/`except`, `ValueError`).
+
+**Data Structures:** Lists, tuples, dictionaries, sets, nested structures.
+
+**Algorithms:** Binary Search (iterative), Bisection Method. Sorting algorithms in progress.
+
+**OOP:** Classes, `__init__`, `__str__`, inheritance, method overriding.
+
+**Tools:** Git, GitHub, VS Code, terminal.
+
+---
+
+## 🚀 How to Run
+
+```bash
+python filename.py
