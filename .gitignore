@@ -12,3 +12,8 @@ venv/
 # OS
 Thumbs.db
 Desktop.ini
+.vs/
+__pycache__/
+*.pyc
+.aider*
+logs.txt
