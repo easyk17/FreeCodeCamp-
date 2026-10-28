@@ -1,0 +1,14 @@
+﻿# Aider AI
+.aider.*
+.aider*
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+# VSCode
+.vscode/
+# OS
+Thumbs.db
+Desktop.ini

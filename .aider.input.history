@@ -1,0 +1,6 @@
+
+# 2026-10-22 20:14:39.746092
++N
+
+# 2026-10-22 20:14:46.566924
++Mujhe ek Python project banana hai. Pehle ek script banao generate_logs.py jo ek logs.txt file generate kare. Is file mein 10,000 dummy log entries honi chahiye. Format aisa ho: YYYY-MM-DD HH:MM:SS - Log Message. Time ko random generate karo aur usko sort karke hi file mein save karo. Baad mein hum is file par Binary Search lagayenge.
